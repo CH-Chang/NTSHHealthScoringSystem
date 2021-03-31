@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh_Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新北市立新北高中 衛生管理系統</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/notosanstc.css">
+    <link rel="stylesheet" href="/css/style-scoringteam.css">
+</head>
+<body>
+
+    <div class="page-loader">
+        <div class="loader">
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+        </div>
+    </div>
+
+    <header id="index-header">
+        <div id="index-header-logo">
+            <a href="../"><img id="index-header-logo-img" src="/img/logo-NTSH.png"></a>
+        </div>
+        <nav id="index-header-nav">
+            <ul id="index-header-nav-items">
+                <li id="index-header-nav-home" class="index-header-nav-item index-header-nav-item-current"><a href="javascript:void(0)">主要首頁</a></li>
+                <li id="index-header-nav-rank" class="index-header-nav-item"><a href="javascript:void(0)">班級排名</a></li>
+                <li id="index-header-nav-scoringteam" class="index-header-nav-item"><a href="javascript:void(0)">評分團隊</a></li>
+                <li id="index-header-nav-about" class="index-header-nav-item"><a href="javascript:void(0)">關於系統</a></li>
+                <li id="index-header-nav-tku" class="index-header-nav-item"><a href="javascript:void(0)">專案說明</a></li>
+                <li id="index-header-nav-login" class="index-header-nav-item"><a href="/login">登入系統</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+
+    
+
+    <div id="index-page-scoringteam" class="page">
+        <div class="container">
+            <div data-aos="flip-up" id="index-scoringteam-title" class="page-title">
+                <h1 id="index-scoringteam-title-zhtw" class="page-title-zhtw text-font-notosans text-linehigh-0p6 text-color-232323 text-size-3vmin">評分團隊</h1>
+                <h2 id="index-scoringteam-title-en" class="page-title-en text-font-notosans text-linehigh-0p6 text-color-232323 text-size-2vmin">Socring Tram</h2>
+            </div>
+            <div id="index-scoringteam-content">
+                <div data-aos="flip-left" id="index-scoringteam-leader">
+                    <img id="index-scoringteam-leader-img" src="/img/img-healthsectionleader.jpg">
+                    <div id="index-scoringteam-leader-title">
+                        <h4 id="index-scoringteam-leader-title-zhtw" class="text-font-notosans text-linehigh-1 text-color-232323 text-size-3vmin">許舜婷 老師</h4>
+                        <h5 id="index-scoringteam-leader-title-zhtw" class="text-font-notosans text-linehigh-1 text-color-232323 text-size-2vmin">新北高中 衛生組 組長</h5>
+                        <h6 id="index-scoringteam-leader-title-en" class="text-font-notosans text-linehigh-1 text-color-232323 text-size-1p5vmin text-center">New Taipei Senior High School</br> Health Section Leader</h6>
+                    </div>
+                </div>
+                <div data-aos="fade-up" id="index-scoringteam-description">
+                    <p class="text-font-notosans text-linehigh-1 text-color-232323 text-size-2vmin"><span>新</span>北市立新北高級中學，為一市立普通高級中學，前身為國立三重高級中學，設有普通班、音樂班與體育班，位於臺灣新北市三重區與蘆洲區交界處的分子尾莊。在校內每周皆有整潔以及秩序相關競賽。整潔競賽部分以新北高中學務處衛生組進行舉辦，並由衛生組挑選各班同學進行互相評分的動作，並於每周進行結算以及頒發相關獎狀以及獎勵。目前下方為新北高中衛生糾察隊隊員明細與資料。</p>
+                </div>
+                <div data-aos="fade-down" id="index-scoringteam-member">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th id="index-scoringteam-member-id">成員列表</th>
+                                <th id="index-scoringteam-member-img">隊員頭像</th>
+                                <th id="index-scoringteam-member-name">隊員名稱</th>
+                                <th id="index-scoringteam-member-position">隊內職位</th>
+                        
+                            </tr>
+                            <% for(let i=0;i<raters.length;i++){%>
+                            <tr>
+                                <th><%=raters[i].id%></th>
+                                <td><img src="<%=raters[i].img%>"></td>
+                                <td><%=raters[i].name%></td>
+                                <td><%=raters[i].position%></td>
+                            </tr>
+                            <%}%>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    <footer>
+        <p class="text-font-notosans text-linehigh-0p6 text-color-232323 text-size-2vmin text-center">版權所有 @ 張智翔</p>
+        <p class="text-font-notosans text-linehigh-0p6 text-color-232323 text-size-2vmin text-center">淡江大學 02-26215656 251新北市淡水區英專路151號</p>
+    </footer>
+
+    
+    
+    <script src="/lib/jquery-3.4.1.min.js"></script>
+    <script src="/lib/popper.min.js"></script>
+    <script src="/lib/bootstrap.min.js"></script>
+    <script src="/lib/anime.min.js"></script>
+    <script src="/lib/aos.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/animation-index.js"></script>
+    <script src="/js/interaction-index.js"></script>
+</body>
+</html>

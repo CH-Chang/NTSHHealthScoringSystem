@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh_Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新北市立新北高中 衛生管理系統</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/aos.css" />
+    <link rel="stylesheet" href="/css/notosanstc.css" />
+    <link rel="stylesheet" href="/css/style-rank.css" />
+  </head>
+  <body>
+    <div class="page-loader">
+      <div class="loader">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+    </div>
+
+    <header id="index-header">
+      <div id="index-header-logo">
+        <a href="../"
+          ><img id="index-header-logo-img" src="/img/logo-NTSH.png"
+        /></a>
+      </div>
+      <nav id="index-header-nav">
+        <ul id="index-header-nav-items">
+          <li
+            id="index-header-nav-home"
+            class="index-header-nav-item index-header-nav-item-current"
+          >
+            <a href="javascript:void(0)">主要首頁</a>
+          </li>
+          <li id="index-header-nav-rank" class="index-header-nav-item">
+            <a href="javascript:void(0)">班級排名</a>
+          </li>
+          <li id="index-header-nav-scoringteam" class="index-header-nav-item">
+            <a href="javascript:void(0)">評分團隊</a>
+          </li>
+          <li id="index-header-nav-about" class="index-header-nav-item">
+            <a href="javascript:void(0)">關於系統</a>
+          </li>
+          <li id="index-header-nav-tku" class="index-header-nav-item">
+            <a href="javascript:void(0)">專案說明</a>
+          </li>
+          <li id="index-header-nav-login" class="index-header-nav-item">
+            <a href="/login">登入系統</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="index-page-rank" class="page">
+      <div class="container">
+        <div data-aos="flip-up" id="index-rank-title" class="page-title">
+          <h1
+            id="index-rank-title-zhtw"
+            class="page-title-zhtw text-font-notosans text-linehigh-0p6 text-color-232323 text-size-3vmin"
+          >
+            班級排名
+          </h1>
+          <h2
+            id="index-rank-title-en"
+            class="page-title-en text-font-notosans text-linehigh-0p6 text-color-232323 text-size-2vmin"
+          >
+            rank
+          </h2>
+        </div>
+        <div id="index-rank-content">
+          <div id="index-rank-honorlist">
+            <div data-aos="fade-right" id="index-rank-honorlist-title">
+              <h6
+                class="text-font-notosans text-linehigh-1 text-color-232323 text-size-2vmin"
+              >
+                本周前三排名賽
+              </h6>
+              <p
+                class="text-font-notosans text-linehigh-1 text-color-232323 text-size-1vmin"
+              >
+                資料更新時間：2020/04/19 08:41:10
+              </p>
+            </div>
+            <div data-aos="zoom-in" id="index-rank-honorlist-content">
+              <table>
+                <tbody>
+                  <tr>
+                    <th></th>
+                    <th><img src="/img/img-1th.png" />第一名</th>
+                    <th><img src="/img/img-2nd.png" />第二名</th>
+                    <th><img src="/img/img-3rd.png" />第三名</th>
+                  </tr>
+                  <tr>
+                    <th>一年級</th>
+                    <% if(typeof(gradeOne)!='undefined'){%>
+                    <%if(gradeOne.lenth>3){%> <%for(let i=0;i<3;i++){%>
+                    <td><%=gradeOne[i].grade%>年<%=gradeOne[i].classes%>班</td>
+                    <%}%> <%}%> <%}%>
+                  </tr>
+                  <tr>
+                    <th>二年級</th>
+                    <% if(typeof(gradeTwo)!='undefined'){%>
+                    <%if(gradeTwo.lenth>3){%> <%for(let i=0;i<3;i++){%>
+                    <td><%=gradeTwo[i].grade%>年<%=gradeTwo[i].classes%>班</td>
+                    <%}%> <%}%> <%}%>
+                  </tr>
+                  <tr>
+                    <th>三年級</th>
+                    <% if(typeof(gradeThree)!='undefined'){%>
+                    <%if(gradeThree.lenth>3){%> <%for(let i=0;i<3;i++){%>
+                    <td>
+                      <%=gradeThree[i].grade%>年<%=gradeThree[i].classes%>班
+                    </td>
+                    <%}%> <%}%> <%}%>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="index-rank-detail">
+            <div data-aos="fade-right" id="index-rank-detail-title">
+              <h6
+                class="text-font-notosans text-linehigh-1 text-color-232323 text-size-2vmin"
+              >
+                當日各年級詳細紀錄
+              </h6>
+              <p
+                class="text-font-notosans text-linehigh-1 text-color-232323 text-size-1vmin"
+              >
+                資料更新時間：2020/04/19 08:41:10
+              </p>
+            </div>
+            <div data-aos="zoom-in" id="index-rank-detail-content">
+              <div id="index-rank-detail-nav">
+                <ul>
+                  <li
+                    class="index-rank-detail-nav-item index-rank-detail-nav-selected"
+                  >
+                    <a href="javascript:void(0)">一年級</a>
+                  </li>
+                  <li class="index-rank-detail-nav-item">
+                    <a href="javascript:void(0)">二年級</a>
+                  </li>
+                  <li class="index-rank-detail-nav-item">
+                    <a href="javascript:void(0)">三年級</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="index-rank-detail-content">
+                <table id="index-rank-detail-table-1">
+                  <tbody>
+                    <tr>
+                      <th id="index-rank-detail-table-class">一年級</th>
+                      <th id="index-rank-detail-table-classroom">教室部分</th>
+                      <th id="index-rank-detail-table-bathroom">廁所部分</th>
+                      <th id="index-rank-detail-table-office">辦公室部分</th>
+                      <th id="index-rank-detail-table-total">總計</th>
+                    </tr>
+
+                    <%for(let i=0;i<records.length;i++){
+                    if(records[i].grade==1){%>
+                    <tr>
+                      <th><%=records[i].grade%>年<%=records[i].classes%>班</th>
+                      <td><%=records[i].classroom%></td>
+                      <td><%=records[i].bathroom%></td>
+                      <td><%=records[i].office%></td>
+                      <td><%=records[i].total%></td>
+                    </tr>
+                    <%}}%>
+                  </tbody>
+                </table>
+                <table id="index-rank-detail-table-2">
+                  <tbody>
+                    <tr>
+                      <th id="index-rank-detail-table-class">二年級</th>
+                      <th id="index-rank-detail-table-classroom">教室部分</th>
+                      <th id="index-rank-detail-table-bathroom">廁所部分</th>
+                      <th id="index-rank-detail-table-office">辦公室部分</th>
+                      <th id="index-rank-detail-table-total">總計</th>
+                    </tr>
+                    <%for(let i=0;i<records.length;i++){
+                    if(records[i].grade==2){%>
+                    <tr>
+                      <th><%=records[i].grade%>年<%=records[i].classes%>班</th>
+                      <td><%=records[i].classroom%></td>
+                      <td><%=records[i].bathroom%></td>
+                      <td><%=records[i].office%></td>
+                      <td><%=records[i].total%></td>
+                    </tr>
+                    <%}}%>
+                  </tbody>
+                </table>
+                <table id="index-rank-detail-table-3">
+                  <tbody>
+                    <tr>
+                      <th id="index-rank-detail-table-class">三年級</th>
+                      <th id="index-rank-detail-table-classroom">教室部分</th>
+                      <th id="index-rank-detail-table-bathroom">廁所部分</th>
+                      <th id="index-rank-detail-table-office">辦公室部分</th>
+                      <th id="index-rank-detail-table-total">總計</th>
+                    </tr>
+                    <%for(let i=0;i<records.length;i++){
+                    if(records[i].grade==3){%>
+                    <tr>
+                      <th><%=records[i].grade%>年<%=records[i].classes%>班</th>
+                      <td><%=records[i].classroom%></td>
+                      <td><%=records[i].bathroom%></td>
+                      <td><%=records[i].office%></td>
+                      <td><%=records[i].total%></td>
+                    </tr>
+                    <%}}%>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p
+        class="text-font-notosans text-linehigh-0p6 text-color-232323 text-size-2vmin text-center"
+      >
+        版權所有 @ 張智翔
+      </p>
+      <p
+        class="text-font-notosans text-linehigh-0p6 text-color-232323 text-size-2vmin text-center"
+      >
+        淡江大學 02-26215656 251新北市淡水區英專路151號
+      </p>
+    </footer>
+
+    <script src="/lib/jquery-3.4.1.min.js"></script>
+    <script src="/lib/popper.min.js"></script>
+    <script src="/lib/bootstrap.min.js"></script>
+    <script src="/lib/anime.min.js"></script>
+    <script src="/lib/aos.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/animation-index.js"></script>
+    <script src="/js/interaction-index.js"></script>
+  </body>
+</html>

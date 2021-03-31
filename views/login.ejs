@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新北市立新北高中新北高中 衛生管理系統</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/notosanstc.css">
+    <link rel="stylesheet" href="/css/style-login.css">
+</head>
+<body>
+    <div class="page-loader">
+        <div class="loader">
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+        </div>
+    </div>
+
+    <div id="login-page" class="page">
+        
+        <div id="login-page-carousel">
+            <img class="login-page-carousel-item" src="/img/bg-login.jpg">
+        </div>
+    
+        
+
+        <div id="login-page-content">
+            <div id="login-page-loginBox" class="center">
+                <div id="login-page-loginBox-title">
+                    <h1 id="login-page-loginBox-title-zhtw" class="text-color-232323 text-font-notosans text-size-5vmin">登入</h1>
+                    <h2 id="login-page-loginBox-title-en" class="text-color-232323 text-font-notosans text-size-3vmin">Login</h2>
+                </div>
+                <form id="login-page-loginBox-form">
+                    <p id="login-page-loginBox-username-title" class="text-color-232323 text-font-notosans text-size-1p5vmin">帳號 - Account ID</p>
+                    <input id="login-page-loginBox-username"  type="text" name="username" placeholder="請輸入帳號" pattern="[0-9a-zA-z]+$" class="text-font-notosans">
+                    <p id="login-page-loginBox-password-title" class="text-color-232323 text-font-notosans text-size-1p5vmin">密碼 - Password</p>
+                    <input id="login-page-loginBox-password" type="password" name="password" placeholder="請輸入密碼" pattern="[0-9a-zA-z]+$" class="text-font-notosans">
+                    <p id="login-page-loginBox-status" class="text-color-FF0000 text-font-notosans text-size-1p5vmin"></p>
+                    <input id="login-page-loginBox-submit" type="submit" value="登入" class="text-font-notosans">
+                </form>
+            </div>
+
+            <div id="login-page-description">
+                <p class="text-color-eeeeee text-font-notosans text-size-1p5vmin text-linehigh-0p6 text-center">新北市立新北高級中學 衛生管理系統 ｜ Copyright © 2020 CHANG CHIH HSIANG. All rights reserved.</p>
+                <p class="text-color-eeeeee text-font-notosans text-size-1p5vmin text-linehigh-0p6 text-center">目前本網站不開放註冊，若有任何帳戶相關問題請聯絡網站管理員</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/lib/jquery-3.4.1.min.js"></script>
+    <script src="/lib/popper.min.js"></script>
+    <script src="/lib/jsencrypt.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/interaction-login.js"></script>
+    
+</body>
+</html>

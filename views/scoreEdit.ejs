@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新北市立新北高中 衛生管理系統</title>
+    <link rel="stylesheet" href="/css/aos.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/notosanstc.css" />
+    <link rel="stylesheet" href="/css/style-dashboard.css" />
+  </head>
+  <body>
+    <div class="page-loader">
+      <div class="loader">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+    </div>
+
+    <header id="index-header">
+      <div id="index-header-logo">
+        <a href="/"
+          ><img id="index-header-logo-img" src="/img/logo-NTSH.png"
+        /></a>
+      </div>
+      <nav id="index-header-nav">
+        <ul id="index-header-nav-items">
+          <li id="index-header-nav-my" class="index-header-nav-item">
+            <a href="/dashboard/my">個人資料</a>
+          </li>
+          <li id="index-header-nav-account" class="index-header-nav-item">
+            <a href="/dashboard/accountManagement">帳號管理</a>
+          </li>
+          <li
+            id="index-header-nav-score"
+            class="index-header-nav-item index-header-nav-item-current"
+          >
+            <a href="/dashboard/scoreManagement">成績管理</a>
+          </li>
+          <li id="index-header-nav-index" class="index-header-nav-item">
+            <a href="../../">返回首頁</a>
+          </li>
+          <li id="index-header-nav-logout" class="index-header-nav-item">
+            <a href="/dashboard/logout">系統登出</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div id="editScore-title">
+        <h1
+          id="editScore-title-zhtw"
+          class="text-color-232323 text-font-notosans text-size-2p5vmin text-linehigh-0p6"
+        >
+          <%=title_zhtw%>
+        </h1>
+        <h2
+          id="editScore-title-en"
+          class="text-color-232323 text-font-notosans text-size-2vmin text-linehigh-0p6"
+        >
+          <%=title_en%>
+        </h2>
+      </div>
+      <div>
+        <div id="editScore-infor">
+          <h1
+            id="editScore-infor-title"
+            class="text-font-notosans text-size-2p5vmin text-linehigh-1 text-color-232323"
+          >
+            資料表
+          </h1>
+          <table
+            id="editScore-infor-table"
+            class="text-font-notosans text-center text-color-232323"
+          >
+            <tbody>
+              <tr>
+                <th id="editScore-infor-table-year">評分年級</th>
+                <th id="editScore-infor-table-classes">評分班級</th>
+                <th id="editScore-infor-table-date">評分日期</th>
+              </tr>
+              <tr>
+                <td>
+                  <select class="editScore-infor-table-year-select" disabled>
+                    <option value="<%=data[0].year%>"><%=data[0].year%> 年級</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="editScore-infor-table-classes-select" disabled>
+                    <option value="<%=data[0].classes%>"><%=data[0].classes%> 班</option>
+                  </select>
+                </td>
+                <td>
+                  <input class="editScore-infor-table-date-input"
+                  type="date"
+                  value="<%=data[0].date%>"
+                  disabled>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="editScore-score">
+          <h1
+            id="editScore-score-title"
+            class="text-font-notosans text-size-2p5vmin text-linehigh-1 text-color-232323"
+          >
+            評分表
+          </h1>
+          <table
+            id="editScore-score-table"
+            class="text-font-notosans text-center text-color-232323"
+          >
+            <tbody>
+              <tr>
+                <th id="editScore-score-table-item">評分項目</th>
+                <th id="editScore-score-table-score">評分分數</th>
+                <th id="editScore-score-table-detail">評分細節</th>
+              </tr>
+              <%for(let i=0;i<data.length;i++){%>
+              <tr>
+                <td class="text-size-2vmin editScore-score-table-item-input"><%=data[i].itemsName%></td>
+                <td>
+                  <input
+                    type="number"
+                    class="editScore-score-table-score-input"
+                    value="<%=data[i].grade%>"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    class="editScore-score-table-detail-input"
+                    value="<%=data[i].detail%>"
+                  />
+                </td>
+              </tr>
+              <%}%>
+            </tbody>
+          </table>
+        </div>
+
+        <button
+          id="editScore-submit"
+          class="text-font-notosans text-size-2vmin"
+        >
+          送出
+        </button>
+      </div>
+    </div>
+
+    <script src="/lib/jquery-3.4.1.min.js"></script>
+    <script src="/lib/bootstrap.min.js"></script>
+    <script src="/lib/jsencrypt.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/interaction-dashboard.js"></script>
+  </body>
+</html>

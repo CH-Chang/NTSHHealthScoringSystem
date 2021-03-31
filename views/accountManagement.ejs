@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新北市立新北高中 衛生管理系統</title>
+    <link rel="stylesheet" href="/css/aos.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/notosanstc.css" />
+    <link rel="stylesheet" href="/css/style-dashboard.css" />
+  </head>
+  <body>
+    <div class="page-loader">
+      <div class="loader">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+    </div>
+
+    <header id="index-header">
+      <div id="index-header-logo">
+        <a href="/"
+          ><img id="index-header-logo-img" src="/img/logo-NTSH.png"
+        /></a>
+      </div>
+      <nav id="index-header-nav">
+        <ul id="index-header-nav-items">
+          <li id="index-header-nav-my" class="index-header-nav-item">
+            <a href="/dashboard/my">個人資料</a>
+          </li>
+          <li
+            id="index-header-nav-account"
+            class="index-header-nav-item index-header-nav-item-current"
+          >
+            <a href="/dashboard/accountManagement">帳號管理</a>
+          </li>
+          <li id="index-header-nav-score" class="index-header-nav-item">
+            <a href="/dashboard/scoreManagement">成績管理</a>
+          </li>
+          <li id="index-header-nav-index" class="index-header-nav-item">
+            <a href="../../">返回首頁</a>
+          </li>
+          <li id="index-header-nav-logout" class="index-header-nav-item">
+            <a href="/dashboard/logout">系統登出</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div>
+      <div class="container">
+        <div id="my-account-title">
+          <h1
+            id="my-account-title-zhtw"
+            class="text-color-232323 text-font-notosans text-size-2p5vmin text-linehigh-0p6"
+          >
+            帳戶資料管理
+          </h1>
+          <h2
+            id="my-account-title-en"
+            class="text-color-232323 text-font-notosans text-size-2vmin text-linehigh-0p6"
+          >
+            Account Management
+          </h2>
+        </div>
+
+        <div id="my-account-data">
+
+          <a id="my-account-add" class="text-font-notosans" href="/dashboard/register">新增帳號</a>
+          <table id="my-account-table" class="text-font-notosans text-center">
+            <tbody>
+              <tr>
+                <th>編號</th>
+                <th>身分證字號</th>
+                <th>姓名</th>
+                <th>性別</th>
+                <th>權限</th>
+                <th>註冊時間</th>
+                <th>帳戶異動</th>
+              </tr>
+
+              <% for(let i=0;i<data.length;i++){%>
+              <tr>
+                <td><%=data[i].id%></td>
+                <td><%=data[i].idnum%></td>
+                <td><%=data[i].name%></td>
+                <td><%=(data[i].sex==1? "男":"女")%></td>
+                <td><%=data[i].role%></td>
+                <td><%=data[i].time%></td>
+                <td>
+                  <a href="/dashboard/accountEdit/<%=data[i].id%>" class="my-account-edit">修改</a
+                  ><a href="/dashboard/accountDelete/<%=data[i].id%>" class="my-account-remove">移除</a>
+                </td>
+              </tr>
+              <%}%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="/lib/bootstrap.min.js"></script>
+    <script src="/lib/jquery-3.4.1.min.js"></script>
+    <script src="/js/common.js"></script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新北市立新北高中新北高中 衛生管理系統</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/notosanstc.css" />
+    <link rel="stylesheet" href="/css/style-register.css" />
+  </head>
+  <body>
+    <div class="page-loader">
+      <div class="loader">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+    </div>
+
+    <div id="register-page" class="page">
+      <div id="register-page-carousel">
+        <img class="register-page-carousel-item" src="/img/bg-login.jpg" />
+      </div>
+
+      <div id="register-page-content">
+        <div id="register-page-registerBox" class="center">
+          <div id="register-page-registerBox-title">
+            <h1
+              id="register-page-registerBox-title-zhtw"
+              class="text-color-232323 text-font-notosans text-size-5vmin"
+            >
+              註冊
+            </h1>
+            <h2
+              id="register-page-registerBox-title-en"
+              class="text-color-232323 text-font-notosans text-size-3vmin"
+            >
+              Register
+            </h2>
+          </div>
+          <form id="register-page-registerBox-form" class="text-font-notosans">
+            <p>
+              帳號：<input
+                id="register-page-registerBox-form-username"
+                type="text"
+                name="username"
+              />
+            </p>
+            <p>
+              密碼：<input
+                id="register-page-registerBox-form-password"
+                type="text"
+                name="password"
+              />
+            </p>
+            <p>
+              姓名：<input
+                id="register-page-registerBox-form-name"
+                type="text"
+                name="name"
+              />
+            </p>
+            <p>
+              身分證：<input
+                id="register-page-registerBox-form-idnum"
+                type="text"
+                name="idnum"
+              />
+            </p>
+            <p>
+              性別：<input
+                id="register-page-registerBox-form-sex-boy"
+                type="radio"
+                name="sex"
+                value="1"
+              />男生<input id="" type="radio" name="sex" value="0" />女生
+            </p>
+            <p>
+              住址：<input
+                id="register-page-registerBox-form-address"
+                type="text"
+                name="address"
+              />
+            </p>
+            <p>
+              權限：<select id="register-page-registerBox-form-permission">
+                <option>開發人員</option>
+                <option>衛生組長</option>
+                <option>評分人員</option>
+                <option>教師</option>
+                <option>學生</option>
+              </select>
+            </p>
+            <p>
+              照片：<input
+                id="register-page-registerBox-form-img"
+                type="button"
+                value="選擇照片"
+              />
+            </p>
+
+            <h6
+              id="register-page-registerBox-status"
+              class="text-color-FF0000 text-font-notosans text-size-2vmin"
+            ></h6>
+            <input
+              id="register-page-registerBox-submit"
+              type="submit"
+              value="註冊"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="/lib/jquery-3.4.1.min.js"></script>
+    <script src="/lib/popper.min.js"></script>
+    <script src="/lib/jsencrypt.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/interaction-register.js"></script>
+  </body>
+</html>

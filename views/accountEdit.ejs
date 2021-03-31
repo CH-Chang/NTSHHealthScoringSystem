@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新北市立新北高中 衛生管理系統</title>
+    <link rel="stylesheet" href="/css/aos.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/notosanstc.css" />
+    <link rel="stylesheet" href="/css/style-dashboard.css" />
+  </head>
+  <body>
+    <div class="page-loader">
+      <div class="loader">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+    </div>
+
+    <header id="index-header">
+      <div id="index-header-logo">
+        <a href="/"
+          ><img id="index-header-logo-img" src="/img/logo-NTSH.png"
+        /></a>
+      </div>
+      <nav id="index-header-nav">
+        <ul id="index-header-nav-items">
+          <li
+            id="index-header-nav-my"
+            class="index-header-nav-item <%=(type==0 ? 'index-header-nav-item-current':'')%>"
+          >
+            <a href="/dashboard/my">個人資料</a>
+          </li>
+          <li id="index-header-nav-account" class="index-header-nav-item <%=(type==1 ? 'index-header-nav-item-current' : '')%>">
+            <a href="/dashboard/accountManagement">帳號管理</a>
+          </li>
+          <li id="index-header-nav-score" class="index-header-nav-item">
+            <a href="/dashboard/scoreManagement">成績管理</a>
+          </li>
+          <li id="index-header-nav-index" class="index-header-nav-item">
+            <a href="../../">返回首頁</a>
+          </li>
+          <li id="index-header-nav-logout" class="index-header-nav-item">
+            <a href="/dashboard/logout">系統登出</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div>
+      <div class="container">
+        <div id="my-editInformation-title">
+          <h1
+            id="my-editInformation-title-zhtw"
+            class="text-color-232323 text-font-notosans text-size-2p5vmin text-linehigh-0p6"
+          >
+            <%=title_zhtw%>
+          </h1>
+          <h2
+            id="my-editInformation-title-en"
+            class="text-color-232323 text-font-notosans text-size-2vmin text-linehigh-0p6"
+          >
+            <%=title_en%>
+          </h2>
+        </div>
+
+        <form id="myeditInformation-form">
+          <div id="myeditInformation-form-data">
+            <div id="myeditInformation-form-text">
+              <p class="text-font-notosans text-linehigh-1 text-color-232323">
+                <label>帳號：</label
+                ><input id="myeditInformation-form-text-username" type="input" value="<%=username%>" disabled />
+              </p>
+              <p class="text-font-notosans text-linehigh-1 text-color-232323">
+                <label>身分證字號：</label
+                ><input id="myeditInformation-form-text-idnum" type="input" value="<%=data[0].idnum%>" disabled />
+              </p>
+              <p class="text-font-notosans text-linehigh-1 text-color-232323">
+                <label>權限類別：</label
+                ><select id="myeditInformation-form-text-role">
+                  <option <%=(data[0].role=='開發人員'? "selected":"")%>>開發人員</option>
+                  <option <%=(data[0].role=='衛生組長'? "selected":"")%>>衛生組長</option>
+                  <option <%=(data[0].role=='評分人員'? "selected":"")%>>評分人員</option>
+                  <option <%=(data[0].role=='教師'? "selected":"")%>>教師</option>
+                  <option <%=(data[0].role=='學生'? "selected":"")%>>學生</option>
+                </select>
+              </p>
+
+              <p class="text-font-notosans text-linehigh-1 text-color-232323">
+                <label>姓名：</label
+                ><input id="myeditInformation-form-text-name" type="input" value="<%=data[0].name%>" />
+              </p>
+
+              <p class="text-font-notosans text-linehigh-1 text-color-232323" id="myeditInformation-form-text-sex" >
+                <label>性別：</label><input type="radio"  name="sex" 
+                <%= (data[0].sex==1 ? "checked": "")%> value='1'  /> 男生 <input
+                type="radio" name="sex" <%= (data[0].sex==0 ?
+                "checked": "")%> value='0' /> 女生
+              </p>
+
+              <p class="text-font-notosans text-linehigh-1 text-color-232323">
+                <label>住址：</label
+                ><input type="input" id="myeditInformation-form-text-address" value="<%=data[0].address%>" />
+              </p>
+              <p class="text-font-notosans text-linehigh-1 text-color-232323">
+                <label>新密碼：</label><input id="myeditInformation-form-text-newpassword" type="password" value="" />
+              </p>
+            </div>
+
+            <div id="myeditInformation-form-img">
+              <img
+                id="myeditInformation-form-img-current"
+                src="/img/icon-user.svg"
+              />
+              <div id="myeditInformation-form-img-control">
+                <button
+                  id="myeditInformation-form-img-control-pick"
+                  class="text-font-notosans"
+                >
+                  選擇照片
+                </button>
+                <button
+                  id="myeditInformation-form-img-control-del"
+                  class="text-font-notosans"
+                >
+                  清除照片
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <p
+            id="myeditInformation-form-status"
+            class="text-font-notosans text-linehigh-1 text-color-ff0000"
+          ></p>
+
+          <input
+            id="myeditInformation-form-submit"
+            type="submit"
+            value="送出"
+            class="text-font-notosans"
+          />
+        </form>
+      </div>
+    </div>
+
+    <script src="/lib/jquery-3.4.1.min.js"></script>
+    <script src="/lib/bootstrap.min.js"></script>
+    <script src="/lib/jsencrypt.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/interaction-dashboard.js"></script>
+  </body>
+</html>
